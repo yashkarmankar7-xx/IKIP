@@ -1,0 +1,64 @@
+:root{
+  /* ---- Light theme (default) ---- */
+  --color-primary:#1565C0;
+  --color-secondary:#00ACC1;
+  --color-accent:#26A69A;
+  --color-success:#2E7D32;
+  --color-warning:#FB8C00;
+  --color-danger:#E53935;
+  --color-bg:#F5F7FA;
+  --color-surface:#FFFFFF;
+  --color-card:#FFFFFF;
+  --color-divider:#E5E7EB;
+  --color-text:#111827;
+  --color-text-secondary:#6B7280;
+
+  /* status glows */
+  --glow-success: rgba(46,125,50,0.12);
+  --glow-warning: rgba(251,140,0,0.12);
+  --glow-danger: rgba(229,57,53,0.12);
+
+  /* spacing (8pt grid) */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
+  --sp-5:20px; --sp-6:24px; --sp-7:32px; --sp-8:40px;
+
+  /* radius */
+  --r-button:14px; --r-card:20px; --r-dialog:18px;
+  --r-chart:20px; --r-search:30px; --r-float:24px;
+
+  /* type */
+  --font-display: 'Inter', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --fs-display:32px; --fw-display:700;
+  --fs-title:24px; --fw-title:600;
+  --fs-card:18px; --fw-card:600;
+  --fs-body:15px; --fw-body:400;
+  --fs-caption:12.5px;
+
+  --shadow-soft: 0 2px 10px rgba(17,24,39,0.05), 0 1px 2px rgba(17,24,39,0.04);
+  --shadow-float: 0 12px 30px rgba(17,24,39,0.10);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"]{
+  --color-primary:#1976D2;
+  --color-secondary:#26C6DA;
+  --color-accent:#4DB6AC;
+  --color-success:#43A047;
+  --color-warning:#FFA726;
+  --color-danger:#EF5350;
+  --color-bg:#0D1117;
+  --color-surface:#161B22;
+  --color-card:#1F2937;
+  --color-divider:#30363D;
+  --color-text:#F3F4F6;
+  --color-text-secondary:#9CA3AF;
+
+  --glow-success: rgba(67,160,71,0.16);
+  --glow-warning: rgba(255,167,38,0.16);
+  --glow-danger: rgba(239,83,80,0.16);
+
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-float: 0 14px 34px rgba(0,0,0,0.45);
+}

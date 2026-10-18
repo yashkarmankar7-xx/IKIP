@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IKIP — Industrial Knowledge Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css?v=2">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body>
+
+<!-- ============ SPLASH ============ -->
+<section id="screen-splash" class="screen active">
+  <div class="splash">
+    <div class="splash-logo">IK</div>
+    <div class="splash-name">IKIP</div>
+    <div class="splash-tag">Industrial Knowledge Intelligence Platform</div>
+    <div class="splash-loader"></div>
+    <div class="splash-version">v0.1.0 — Hackathon Prototype</div>
+  </div>
+</section>
+
+<!-- ============ ONBOARDING ============ -->
+<section id="screen-onboarding" class="screen">
+  <div class="onboard">
+    <button id="onboardSkip" class="onboard-skip">Skip</button>
+    <div class="onboard-slides">
+      <div class="onboard-slide active">
+        <div class="onboard-art">🏭</div>
+        <h2>Industrial Asset Monitoring</h2>
+        <p>Monitor all industrial assets in real-time with a beautiful dashboard.</p>
+      </div>
+      <div class="onboard-slide">
+        <div class="onboard-art">🤖</div>
+        <h2>AI Knowledge Assistant</h2>
+        <p>Ask technical questions and instantly access industrial documentation.</p>
+      </div>
+      <div class="onboard-slide">
+        <div class="onboard-art">📈</div>
+        <h2>Predictive Maintenance</h2>
+        <p>Prevent machine failures before they happen.</p>
+      </div>
+    </div>
+    <div id="onboardDots" class="onboard-dots"></div>
+    <div class="onboard-actions">
+      <span></span>
+      <button id="onboardNext" class="btn btn-primary">Next</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGIN ============ -->
+<section id="screen-login" class="screen">
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-logo"><div class="mark">IK</div><div class="word">IKIP</div></div>
+      <h1>Welcome back</h1>
+      <div class="sub">Sign in to continue to your dashboard.</div>
+      <form id="loginForm">
+        <div class="field"><label>Email</label><input type="email" placeholder="you@company.com" value="rahul.sharma@ikip-industries.com" required></div>
+        <div class="field"><label>Password</label><input type="password" placeholder="••••••••" value="••••••••" required></div>
+        <div class="field-row">
+          <label class="checkline"><input type="checkbox" checked> Remember me</label>
+          <button type="button" class="link">Forgot password?</button>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+      <div class="divider-or">or</div>
+      <button class="google-btn">🔵 Continue with Google</button>
+      <div class="auth-switch">Don't have an account? <button id="goSignup" class="link">Create one</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIGNUP ============ -->
+<section id="screen-signup" class="screen">
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-logo"><div class="mark">IK</div><div class="word">IKIP</div></div>
+      <h1>Create your account</h1>
+      <div class="sub">Set up access to the plant intelligence platform.</div>
+      <form id="signupForm">
+        <div class="field"><label>Name</label><input type="text" placeholder="Full name" required></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@company.com" required></div>
+        <div class="field"><label>Password</label><input type="password" placeholder="••••••••" required></div>
+        <div class="field"><label>Confirm Password</label><input type="password" placeholder="••••••••" required></div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px">Create Account</button>
+      </form>
+      <div class="auth-switch">Already have an account? <button id="goLogin" class="link">Log in</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAIN APP ============ -->
+<section id="screen-app" class="screen">
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-brand"><div class="mark">IK</div><div class="word">IKIP<small>Knowledge Platform</small></div></div>
+      <nav>
+        <button class="nav-item active" data-page="dashboard"><span class="ic">🏠</span> Dashboard</button>
+        <button class="nav-item" data-page="machines"><span class="ic">🏭</span> Machines</button>
+        <button class="nav-item" data-page="ai"><span class="ic">🤖</span> AI Assistant</button>
+        <button class="nav-item" data-page="reports"><span class="ic">📄</span> Reports</button>
+        <button class="nav-item" data-page="notifications"><span class="ic">🔔</span> Notifications</button>
+        <button class="nav-item" data-page="profile"><span class="ic">👤</span> Profile</button>
+        <button class="nav-item" data-page="settings"><span class="ic">⚙️</span> Settings</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="sidebar-user">
+          <div class="avatar">RS</div>
+          <div><div class="u-name">Rahul Sharma</div><div class="u-role">Maintenance Engineer</div></div>
+        </div>
+        <button class="nav-item logout-btn" style="margin-top:6px"><span class="ic">↩</span> Log Out</button>
+      </div>
+    </aside>
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+      <header class="topbar">
+        <button class="btn-icon menu-btn">☰</button>
+        <div class="search-bar">🔍<input type="text" placeholder="Search machines, reports, documents…"></div>
+        <div class="topbar-actions">
+          <button id="themeToggleBtn" class="icon-btn" title="Toggle theme"><span id="themeIcon">🌙</span></button>
+          <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔<span class="badge-dot"></span></button>
+          <div class="avatar" style="cursor:pointer" onclick="showPage('profile')">RS</div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD -->
+      <div id="page-dashboard" class="page active">
+        <div class="welcome-card">
+          <div>
+            <div class="greet">Good Morning 👋</div>
+            <h2 id="welcomeName">Rahul Sharma</h2>
+            <div class="role" id="welcomeRole">Maintenance Engineer</div>
+          </div>
+          <div class="date" id="welcomeDate">—</div>
+        </div>
+
+        <div class="grid-4">
+          <div class="stat-card"><div class="ic" style="background:var(--glow-success);color:var(--color-primary)">🏭</div><div class="val" id="statTotal">0</div><div class="lbl">Total Machines</div></div>
+          <div class="stat-card"><div class="ic" style="background:var(--glow-success);color:var(--color-success)">✅</div><div class="val" id="statHealthy">0</div><div class="lbl">Healthy</div><span class="chg up">▲ stable</span></div>
+          <div class="stat-card"><div class="ic" style="background:var(--glow-warning);color:var(--color-warning)">⚠️</div><div class="val" id="statWarning">0</div><div class="lbl">Warning</div><span class="chg down">▲ watch</span></div>
+          <div class="stat-card"><div class="ic" style="background:var(--glow-danger);color:var(--color-danger)">🔴</div><div class="val" id="statCritical">0</div><div class="lbl">Critical</div><span class="chg down">▲ action needed</span></div>
+        </div>
+
+        <div class="quick-actions">
+          <div class="qa-btn" data-toast="QR scanner opening…"><div class="ic">📷</div>Scan QR</div>
+          <div class="qa-btn" data-goto="ai"><div class="ic">🤖</div>AI Assistant</div>
+          <div class="qa-btn" data-goto="reports"><div class="ic">📄</div>Reports</div>
+          <div class="qa-btn" data-toast="Add Machine form coming soon"><div class="ic">➕</div>Add Machine</div>
+          <div class="qa-btn" data-toast="Opening analytics…"><div class="ic">📊</div>Analytics</div>
+        </div>
+
+        <div class="card-title-row" style="margin-bottom:12px"><h3 style="font-size:16px">Live Machine Status</h3><button class="link" onclick="showPage('machines')">View all</button></div>
+        <div id="dashMachineScroll" class="hscroll"></div>
+
+        <div class="dash-grid">
+          <div>
+            <div class="card chart-card">
+              <div class="card-title-row">
+                <h3>Sensor Trends</h3>
+                <div class="chart-tabs">
+                  <span class="chart-tab active" data-metric="temp">Temp</span>
+                  <span class="chart-tab" data-metric="vibration">Vibration</span>
+                  <span class="chart-tab" data-metric="health">Health</span>
+                </div>
+              </div>
+              <div class="chart-wrap"><canvas id="dashChart"></canvas></div>
+            </div>
+            <div class="card">
+              <div class="card-title-row"><h3>Recent Activity</h3></div>
+              <ul id="timelineList" class="timeline"></ul>
+            </div>
+          </div>
+          <div>
+            <div class="ai-card">
+              <div class="tag">🤖 AI Recommendation</div>
+              <h4>Motor M-101</h4>
+              <p>High vibration detected. Inspect bearing within 24 hours.</p>
+              <div class="actions">
+                <button id="aiCardView" class="btn btn-primary btn-sm">View Details</button>
+                <button id="aiCardDismiss" class="btn btn-ghost btn-sm">Dismiss</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MACHINES -->
+      <div id="page-machines" class="page">
+        <div class="page-head"><div><h1>Machines</h1><div class="sub">24 assets across the plant</div></div></div>
+        <div class="toolbar">
+          <div class="search-bar">🔍<input type="text" placeholder="Search machines…"></div>
+          <div id="machineFilters" style="display:flex;gap:8px">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="healthy">Healthy</button>
+            <button class="filter-chip" data-filter="warning">Warning</button>
+            <button class="filter-chip" data-filter="critical">Critical</button>
+          </div>
+        </div>
+        <div id="machinesGrid" class="machines-grid"></div>
+      </div>
+
+      <!-- MACHINE DETAIL -->
+      <div id="page-machine-detail" class="page">
+        <button class="link" style="margin-bottom:14px" onclick="showPage('machines')">← Back to Machines</button>
+        <div id="detailHero" class="detail-hero"></div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="overview">Overview</button>
+          <button class="tab-btn" data-tab="monitoring">Monitoring</button>
+          <button class="tab-btn" data-tab="maintenance">Maintenance</button>
+          <button class="tab-btn" data-tab="documents">Documents</button>
+          <button class="tab-btn" data-tab="history">History</button>
+          <button class="tab-btn" data-tab="a-i">AI Analysis</button>
+        </div>
+        <div id="tabOverview" class="tab-panel active card"></div>
+        <div id="tabMonitoring" class="tab-panel"></div>
+        <div id="tabMaintenance" class="tab-panel card"></div>
+        <div id="tabDocuments" class="tab-panel card"></div>
+        <div id="tabHistory" class="tab-panel card"></div>
+        <div id="tabAI" class="tab-panel"></div>
+      </div>
+
+      <!-- AI ASSISTANT -->
+      <div id="page-ai" class="page">
+        <div class="page-head"><div><h1>AI Assistant</h1><div class="sub">Ask about any machine, SOP, or maintenance record</div></div></div>
+        <div class="ai-shell">
+          <div class="ai-history">
+            <div class="ai-conv active"><div>Compressor CP-17 vibration</div><div class="prev">Bearing wear correlated with…</div></div>
+            <div class="ai-conv"><div>Motor M-101 inspection</div><div class="prev">Scheduled maintenance for…</div></div>
+            <div class="ai-conv"><div>Boiler B-01 SOP</div><div class="prev">Safety shutdown procedure…</div></div>
+          </div>
+          <div class="ai-main">
+            <div id="aiMessages" class="ai-messages"></div>
+            <div id="aiSuggestChips" class="suggested"></div>
+            <div class="ai-inputbar">
+              <button class="btn-icon" title="Attach">📎</button>
+              <input id="aiInput" type="text" placeholder="Ask a technical question…">
+              <button class="btn-icon" title="Voice">🎤</button>
+              <button id="aiSendBtn" class="send-btn">➤</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORTS -->
+      <div id="page-reports" class="page">
+        <div class="page-head"><div><h1>Reports</h1><div class="sub">Maintenance, inspection, and AI analysis reports</div></div></div>
+        <div id="reportsGrid" class="reports-grid"></div>
+        <button class="fab" title="Generate Report" onclick="toast('Generating report…')">＋</button>
+      </div>
+
+      <!-- NOTIFICATIONS -->
+      <div id="page-notifications" class="page">
+        <div class="page-head"><div><h1>Notifications</h1><div class="sub">Stay on top of plant alerts</div></div></div>
+        <div id="notifList"></div>
+      </div>
+
+      <!-- PROFILE -->
+      <div id="page-profile" class="page">
+        <div class="page-head"><div><h1>Profile</h1></div></div>
+        <div class="profile-head">
+          <div class="avatar-lg" id="profileInitials">RS</div>
+          <div>
+            <h2 id="profileName">—</h2>
+            <div class="p-role" id="profileRole">—</div>
+          </div>
+          <button class="btn btn-outline" style="margin-left:auto" onclick="showPage('settings')">Edit in Settings</button>
+        </div>
+        <div class="grid-3">
+          <div class="stat-card"><div class="val" id="pStatReports">0</div><div class="lbl">Reports Generated</div></div>
+          <div class="stat-card"><div class="val" id="pStatMachines">0</div><div class="lbl">Machines Managed</div></div>
+          <div class="stat-card"><div class="val" id="pStatTasks">0</div><div class="lbl">Tasks Completed</div></div>
+        </div>
+        <div class="card">
+          <div class="card-title-row"><h3>Details</h3></div>
+          <div class="info-row"><span class="k">Department</span><span class="v" id="pDept">—</span></div>
+          <div class="info-row"><span class="k">Employee ID</span><span class="v" id="pEmpId">—</span></div>
+          <div class="info-row"><span class="k">Phone</span><span class="v" id="pPhone">—</span></div>
+          <div class="info-row"><span class="k">Email</span><span class="v" id="pEmail">—</span></div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div id="page-settings" class="page">
+        <div class="page-head"><div><h1>Settings</h1></div></div>
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-title-row"><h3>Theme</h3></div>
+          <div class="theme-toggle-row">
+            <div class="theme-opt active" data-theme="light">☀️ Light</div>
+            <div class="theme-opt" data-theme="dark">🌙 Dark</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="settings-list">
+            <div class="settings-row"><div><div class="s-label">Language</div><div class="s-sub">App display language</div></div><span class="select-pill">English</span></div>
+            <div class="settings-row"><div><div class="s-label">Push Notifications</div><div class="s-sub">Critical alerts and updates</div></div><div class="switch on"></div></div>
+            <div class="settings-row"><div><div class="s-label">Email Digest</div><div class="s-sub">Weekly summary email</div></div><div class="switch"></div></div>
+            <div class="settings-row"><div><div class="s-label">About</div><div class="s-sub">IKIP v0.1.0 — Hackathon Prototype</div></div><button class="link" onclick="toast('IKIP by your engineering team')">View</button></div>
+            <div class="settings-row"><div><div class="s-label">Privacy</div></div><button class="link" onclick="toast('Privacy policy coming soon')">View</button></div>
+            <div class="settings-row"><div><div class="s-label">Help &amp; Support</div></div><button class="link" onclick="toast('Support: support@ikip-industries.com')">Contact</button></div>
+            <div class="settings-row"><div><div class="s-label">Version</div></div><span style="font-size:13px;color:var(--color-text-secondary)">0.1.0</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV (mobile) -->
+  <nav class="bottom-nav">
+    <button class="bn-item active" data-page="dashboard"><span class="ic">🏠</span>Dashboard</button>
+    <button class="bn-item" data-page="machines"><span class="ic">🏭</span>Machines</button>
+    <button class="bn-item" data-page="ai"><span class="ic">🤖</span>AI</button>
+    <button class="bn-item" data-page="reports"><span class="ic">📄</span>Reports</button>
+    <button class="bn-item" data-page="profile"><span class="ic">👤</span>Profile</button>
+  </nav>
+</section>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/data.js?v=2"></script>
+<script src="js/app.js?v=2"></script>
+</body>
+</html>
